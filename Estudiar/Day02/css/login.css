@@ -1,0 +1,96 @@
+*{padding: 0; margin: 0; box-sizing: border-box; }
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* 화면 전체 높이 */
+    
+}
+
+.container {
+    border: 1px solid gray;
+    width: 600px;
+    height: 400px;
+    display: inline-block;
+    margin: 0 auto;
+    padding: 50px;
+}
+
+h2 {
+    color: slateblue;
+    font-weight: bold;
+    font-size: 40px;
+    cursor: default
+}
+
+.user {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+input {
+    height: 50px;
+    background-color: rgb(248, 248, 248);
+    border: none;
+    border-radius: 9px;
+}
+
+::placeholder {
+    padding-left: 20px;
+    color: lightgrey;
+}
+
+.check {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 18x;
+    color: gray;
+}
+
+#checkbox {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: solid none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#checkbox:checked {
+    background-color: slateblue;
+}
+
+#checkbox:checked::after {
+    content: "✔";
+    color: white;
+    font-size: 14px;
+    display: grid;
+    place-items: center;
+}
+
+.login-btn {
+    margin-top: 15px;
+    width: 500px;
+    height: 50px;
+}
+
+.login {
+    width: 100%;
+    height: 55px;
+    background-color: slateblue;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.login:hover {
+    background-color: rgb(140, 121, 238);
+}
