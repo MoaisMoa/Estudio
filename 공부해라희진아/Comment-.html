@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>댓글</title>
+</head>
+<body>
+    <!-- 제목 -->
+    <header>
+         <h1>댓글 목록</h1>
+     </header>
+
+    <!-- 댓글 카드 -->
+     <!-- <div class="userCard">
+        <div class="userInfo">
+            <img src="img/avatar.png" alt="사용자 아이콘">
+            <p id="name">이름</p>
+        </div>
+            <p id="date">날짜</p>
+        <p id="p_content">댓글 내용</p> -->
+    <!-- 댓글 카드 추가 될 LIST -->
+        <div id="commentList"></div>
+     </div>
+
+    <!-- 입력 영역 -->
+     <h2>댓글 작성</h2>
+     <div class="writeArea">
+        <div class="userName_area">
+            <input type="text" id="writer" placeholder="작성자 이름">
+        </div>
+        
+    <!-- 콘텐츠 영역 -->
+        <div class="contentArea">
+            <textarea name="Content" id="content" placeholder="내용을 작성하세요."></textarea>
+        </div>
+        <div class="Btn_box">
+            <button id="commentBtn">작성</button>
+        </div>
+     </div>
+</body>
+
+<style>
+    * { box-sizing: border-box;}
+    body {
+        width: 100%;
+        height: 100%;
+        align-items: center;
+    }
+
+    .userInfo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    /* 최대 높이 제한 */
+    #p_content {
+        max-height: 200px;
+        overflow-y: auto;
+    }
+
+    #writer {
+        width: 50%;
+        height: 40px;
+        font-size: 15px;
+        border-radius: 3px;
+        margin-bottom: 15px;
+        border: 1px solid;
+    }
+
+    #content {
+        width: 50%;
+        height: 80px;
+        border-radius: 3px;
+        font-size: 15px;
+    }
+
+    .Btn_box {
+        width: 50%;
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 15px;
+    }
+
+    #commentBtn {
+        width: 100px;
+        height: 50px;
+        border-radius: 10px;
+        color: cornflowerblue;
+        font-size: 20px;
+        border: 2px solid cornflowerblue;
+        background-color: white;
+    }
+
+</style>
+
+<script>
+    const writerInput = document.getElementById("writer")
+    const contentInput = document.getElementById("content")
+    const commentList = document.getElementById("commentList")
+    const btn = document.getElementById("commentBtn")
+    //script에서 쓸 변수 선언
+    //여기까진 이해완
+
+    //이건 댓글 추가 함수
+    function addComt() {
+        // const writer = writerInput.value.trim()
+        // const content = contentInput.value.trim()
+        const writer = document.getElementById('writer').value
+        const content = document.getElementById('content').value
+        const date = new Date().toISOString().slice(0,10)
+
+        const card = document.createElement("div")
+        card.classList.add("userCard")
+        
+
+
+        // style에서 댓글 카드 옮겨옴
+        // <div class="userCard">
+        // <div class="userInfo">
+        //     <img src="img/avatar.png" alt="사용자 아이콘">
+        //     <p id="name">이름</p>
+        // </div>
+        //     <p id="date">날짜</p>
+        // <p id="p_content">댓글 내용</p>
+        card.innerHTML = `
+            <div class="userInfo">
+                <img src="img/avatar.png" alt="사용자 아이콘">
+                <p class="name">${writer}</p>
+            </div>
+
+            <p class="date">${date}</p>
+            <p class="content">${content}</p>
+        `
+
+        commentList.appendChild(card)
+        writerInput.value = ''
+        contentInput.value = ''
+    }
+    //버튼 이벤트
+    btn.addEventListener('click',()=>{
+        addComment()
+    })
+</script>
+</script>
+</html>
