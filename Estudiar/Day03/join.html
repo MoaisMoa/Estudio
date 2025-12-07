@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>join</title>
+    <link rel="stylesheet" href="css/join.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <form action="Login" method="post">
+        <h1>NAVER</h1>
+        <section class="Join-section">
+            <h5>아이디</h5>
+            <input type="email" id="email" name="email">
+            <h5>비밀번호</h5>
+            <input type="password" name="password">
+            <h5>비밀번호 재확인</h5>
+            <input type="password" name="confirmPW">  
+        </section>
+        
+        <section class="info-SectionBox">
+            <section class="info-section">
+                <h5>이름</h5>
+                <input type="text" name="userName">
+                <h5>생년월일</h5>
+                <input type="text" name="birthYear" placeholder="년 (4자)">
+                <!-- 월 스크롤 어떻게 하는건데.. -->
+                <br>
+                <input type="text" name="birthDay" placeholder="일">
+            </section>
+           
+        <section class="gender-section">
+            <h5>성별</h5>
+            <!--
+            <label><input type="radio" id="male" name="gender" value="male">male</label>
+            <label><input type="radio" id="female" name="gender" value="female">female</label>
+             성별 스크롤 어떻게 하는건데.. -->
+             <input type="text" name="gender" placeholder="성별선택">
+        </section>
+
+            <section class="email-section">
+                <h5>본인확인 이메일(선택)</h5>
+                <input type="text" name="id" placeholder="선택입력">
+            </section>
+            <section class="phoneNum-section">
+                <h5>휴대전화</h5>
+                <input type="number" name="phonNumber" placeholder="전화번호 입력">
+            </section>
+
+            <div class="joinBtn">
+                <button type="submit" id="submit">가입하기</button>
+            </div>
+        </section>
+    </form>
+</body>
+</html>
